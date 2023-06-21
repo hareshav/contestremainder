@@ -4,7 +4,7 @@ import time
 import controller as cnt
  
 
-time.sleep(2.0)
+# time.sleep(2.0)
 
 mp_draw=mp.solutions.drawing_utils
 mp_hand=mp.solutions.hands
