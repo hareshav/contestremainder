@@ -1,4 +1,11 @@
-#define BLYNK_TEMPLATE_ID "TMPL3xGVpNsC4"
-//#define BLYNK_TEMPLATE_NAME "LedBlynk"
-#define BLYNK_AUTH_TOKEN "GVpmvlawUaOcbNNYwSHdTaWz2300ZC8a"
-const token = 'BQDcgEb3QT1vt0y2nwbXd1_tWNbu4baumqsaPlRfG2BrEi0u1Cb0atcRxTRKE58f5Nt-041uj6ZxA21PiKXxKPcv4T9Tv8p7y1Pc7H3Nt29S8vfScgBzaxET1xkJau4e9yNGJRUA9u-uOg6KZAID9XFID1oloSOVqFWYzGBVMXGRPAU9B-J3BUhhzmRLLY7umpyFTKr-lCwaZizx7OVho8N45K2UyMYZoppmILUCXJPAm5wP5d9UOQd_2-Gtuscc9eBZGhYlUHEIS9Q2I_mzVlpp';
+import requests
+from bs4 import BeautifulSoup
+response=requests.get("https://leetcode.com/problemset/all/")
+soup = BeautifulSoup(response.content, 'html.parser')
+problem_rows = soup.find_all('a',class_="hover:text-label-3 dark:hover:text-dark-label-3 group flex h-8 w-8 cursor-pointer items-center justify-center rounded-full hover:bg-fill-3 dark:hover:bg-dark-fill-3")
+for i in problem_rows:
+    try:
+        print(i['href'])
+    except Exception as e:
+        pass
+
